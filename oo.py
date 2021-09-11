@@ -9,7 +9,11 @@ Summary.
 
 class Bicycle:
     """A bicycle."""
-
+    wheels = 2
+    def __init__(self, manufacturer, color):
+        
+        self.manufacturer = manufacturer
+        self.color = color
     # TODO: replace this with your code
 
 
