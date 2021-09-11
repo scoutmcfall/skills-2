@@ -105,7 +105,15 @@ class Rectangle:
 
 class Square(Rectangle):
     """A square."""
-
+    def __init__(self, side):
+        self.length = side
+        self.width = side
+    
+    def calculate_area(self):
+        if self.length == self.width:
+            return self.length * self.width
+        else:
+            raise ValueError("Invalid square.")
     # TODO: replace this with your code
 
 
