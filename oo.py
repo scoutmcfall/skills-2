@@ -32,7 +32,8 @@ class User:
 
     def process_change_password(self, current_password, new_password):
         """Process a password change."""
-
+        if user.password not in current password:
+            raise ValueError("current_password and password don't match")
         # TODO: replace this with your code
 
 
