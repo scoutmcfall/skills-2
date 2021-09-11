@@ -12,6 +12,11 @@ def count_words(phrase):
     are two different words. It also doesn't handle captialization so
     'Hello' and 'hello' are two different words as well.
     """
+    word_phrase = phrase.split()
+    word_count = 0
+    for word in word_phrase:
+        word_count += 1
+    return word_count
 
     # TODO: replace this with your code
 
@@ -35,7 +40,18 @@ def get_melons_at_price(price):
     If there are no melons being sold at the given price it returns an
     empty set.
     """
+    melon_names = []
+    melon_set = set(melon_names)
+    for melon in MELONS:
+        if price in melon:
+            melon_names.append(melon)
+    return melon_set
 
+    # melon_set = {}
+    # for melon in MELONS:
+    #     MELONS[melon] = MELONS.get(price, [])
+    #     melon_set.add(melon)
+    # return melon_set
     # TODO: replace this with your code
 
 
