@@ -74,7 +74,12 @@ class Library:
 
     def find_books_by_author(self, author):
         """Return a list of books by the given author."""
-
+        books_by_author = []
+        #take in an author and return a list of all books written by that author
+        if author in books:
+            book_by_author.append(book.title)
+        #if no books, return empty list
+        return books_by_author
         # TODO: replace this with your code
 
 
