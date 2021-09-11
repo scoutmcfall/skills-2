@@ -13,8 +13,17 @@ def count_words(phrase):
     'Hello' and 'hello' are two different words as well.
     """
     word_count = len(phrase.split())
+    words = phrase.split()
+    word_count_dict = {}
+    # sum_count = []
+    for word in words:
+        key = word
+        word_count_dict[key] = 1
+        word_count_dict[key] = word_count_dict.get(key,+1)
+    # for key, value in word_count_dict:
+    #     value.append(sum_count)
 
-    return word_count
+    return word_count_dict
 
     # TODO: replace this with your code
 
@@ -125,7 +134,28 @@ def create_word_chain(words):
     The sequence will continue in this fashion until it runs out of
     words or it can't find words that'll fit the pattern.
     """
-
+    #this broke the test also!
+    sequence = [words[0]]
+    #((sequence[0])[-1]) = ((sequence[1])[0]) #the second word starts with the last letter of the first word
+    #make a dictionary of first letter:word pairs
+    # word_dict = {}
+    # for word in words:
+    #     key = word
+    #     word_dict[key] = word[0]
+    # for word in sequence:
+    #     word_dict[word] = word_dict.get(word[-1], [])
+    #     sequence.append("whichever word comes next")
+    #SOMETHING I did here broke the test
+    #make a dictionary of (last letter: word) pairs?
+    # word_dict = {}
+    # for word in words:
+    #     key = word[-1]
+    #     word_dict[key] = word
+    # word_chain = [words[0]]
+    # for word in word_chain:
+    #     word_dict[word[-1]] = word_dict.get(word[-1],[])
+    #     word_chain.append(word_dict[word[-1]])
+    # return words
     # TODO: replace this with your code
 
 
