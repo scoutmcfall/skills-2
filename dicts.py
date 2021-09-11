@@ -80,7 +80,19 @@ def translate_to_pirate_talk(phrase):
     The given phrase will be normalized so it will never contain punctuation
     and will only consist of lowercased letters.
     """
-
+    words = phrase.split() #split up the input phrase into a list of words
+    pirate_phrase = [] #create a place for the final phrase to live
+    
+    for word in words:
+        if ENG_PIRATE_LOOKUP[word] == ENG_PIRATE_LOOKUP.get(word, []):
+            pirate_phrase.append(ENG_PIRATE_LOOKUP[word])
+        # if word in ENG_PIRATE_LOOKUP:
+        #     pirate_phrase.append(ENG_PIRATE_LOOKUP[word])
+        else:
+            pirate_phrase.append(word)
+    pirate_string = str(pirate_phrase)
+    #pirate_phrase.join("")
+    return pirate_string
     # TODO: replace this with your code
 
 
