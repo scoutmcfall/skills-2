@@ -76,8 +76,9 @@ class Library:
         """Return a list of books by the given author."""
         books_by_author = []
         #take in an author and return a list of all books written by that author
-        if author in books:
-            book_by_author.append(book.title)
+        for author in self.books:
+            if author in self.books:
+                books_by_author.append(self.book)
         #if no books, return empty list
         return books_by_author
         # TODO: replace this with your code
