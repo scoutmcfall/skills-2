@@ -63,7 +63,13 @@ class Library:
 
     def create_and_add_book(self, title, author):
         """Create a Book and add it to the library's list of books."""
+        #take in title and author, instantiate a book
+        
+        book = Book(title, author)
+        #add book to the library's list of books
+        self.books.append(book)
 
+    
         # TODO: replace this with your code
 
     def find_books_by_author(self, author):
