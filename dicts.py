@@ -12,10 +12,8 @@ def count_words(phrase):
     are two different words. It also doesn't handle captialization so
     'Hello' and 'hello' are two different words as well.
     """
-    word_phrase = phrase.split()
-    word_count = 0
-    for word in word_phrase:
-        word_count += 1
+    word_count = len(phrase.split())
+
     return word_count
 
     # TODO: replace this with your code
