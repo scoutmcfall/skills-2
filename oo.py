@@ -51,6 +51,9 @@ class Book:
 
         self.title = title
         self.author = author
+        #book 1 = Book(bible, "jesus")
+        #print(book1.title) "bible"
+        #print(book1.author) "jesus"
 
 
 class Library:
@@ -64,21 +67,23 @@ class Library:
     def create_and_add_book(self, title, author):
         """Create a Book and add it to the library's list of books."""
         #take in title and author, instantiate a book
-        
+        #use super to get the book class?
         book = Book(title, author)
         #add book to the library's list of books
         self.books.append(book)
 
-    
         # TODO: replace this with your code
 
     def find_books_by_author(self, author):
         """Return a list of books by the given author."""
         books_by_author = []
         #take in an author and return a list of all books written by that author
-        for author in self.books:
-            if author in self.books:
-                books_by_author.append(self.book)
+        if author in self.books:
+           return Book(author)
+        
+        # for self.book in self.books:
+        #     if self.author in self.books:
+        #         books_by_author.append(self.title)
         #if no books, return empty list
         return books_by_author
         # TODO: replace this with your code

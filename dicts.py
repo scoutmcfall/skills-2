@@ -18,8 +18,9 @@ def count_words(phrase):
     # sum_count = []
     for word in words:
         key = word
-        word_count_dict[key] = 1
-        word_count_dict[key] = word_count_dict.get(key,+1)
+        # word_count_dict[key] += 1
+        temp_value = word_count_dict.get(key, 0)
+        word_count_dict[key] = temp_value +1
     # for key, value in word_count_dict:
     #     value.append(sum_count)
 
