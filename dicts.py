@@ -92,17 +92,17 @@ def translate_to_pirate_talk(phrase):
     and will only consist of lowercased letters.
     """
     words = phrase.split() #split up the input phrase into a list of words
-    pirate_phrase = [] #create a place for the final phrase to live
+    pirate_list = [] #create a place for the final phrase to live
     
     for word in words:
-        word = ENG_PIRATE_LOOKUP.get(word, word)
-        pirate_phrase.append(word)
+        translated_word = ENG_PIRATE_LOOKUP.get(word, word)
+        pirate_list.append(translated_word)
         # if word in ENG_PIRATE_LOOKUP:
         #     pirate_phrase.append(ENG_PIRATE_LOOKUP[word])
         # else:
         #     pirate_phrase.append(word)
     #pirate_string = str(pirate_phrase)
-    pirate_string = " ".join(pirate_phrase)
+    pirate_string = " ".join(pirate_list)
     return pirate_string
     # TODO: replace this with your code
 
