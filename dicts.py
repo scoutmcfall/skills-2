@@ -95,14 +95,14 @@ def translate_to_pirate_talk(phrase):
     pirate_phrase = [] #create a place for the final phrase to live
     
     for word in words:
-        if ENG_PIRATE_LOOKUP[word] == ENG_PIRATE_LOOKUP.get(word, []):
-            pirate_phrase.append(ENG_PIRATE_LOOKUP[word])
+        word = ENG_PIRATE_LOOKUP.get(word, word)
+        pirate_phrase.append(word)
         # if word in ENG_PIRATE_LOOKUP:
         #     pirate_phrase.append(ENG_PIRATE_LOOKUP[word])
-        else:
-            pirate_phrase.append(word)
-    pirate_string = str(pirate_phrase)
-    #pirate_phrase.join("")
+        # else:
+        #     pirate_phrase.append(word)
+    #pirate_string = str(pirate_phrase)
+    pirate_string = " ".join(pirate_phrase)
     return pirate_string
     # TODO: replace this with your code
 
