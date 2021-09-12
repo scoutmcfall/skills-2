@@ -49,10 +49,11 @@ def get_melons_at_price(price):
     empty set.
     """
     melon_names = []
-    melon_set = set(melon_names)
+    
     for melon in MELONS:
         if price in melon:
-            melon_names.append(melon)
+            melon_names.append(melon[0])
+    melon_set = set(melon_names)
     return melon_set
 
     # melon_set = {}
