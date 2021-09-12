@@ -97,11 +97,7 @@ def translate_to_pirate_talk(phrase):
     for word in words:
         translated_word = ENG_PIRATE_LOOKUP.get(word, word)
         pirate_list.append(translated_word)
-        # if word in ENG_PIRATE_LOOKUP:
-        #     pirate_phrase.append(ENG_PIRATE_LOOKUP[word])
-        # else:
-        #     pirate_phrase.append(word)
-    #pirate_string = str(pirate_phrase)
+        
     pirate_string = " ".join(pirate_list)
     return pirate_string
     # TODO: replace this with your code
@@ -136,8 +132,29 @@ def create_word_chain(words):
     The sequence will continue in this fashion until it runs out of
     words or it can't find words that'll fit the pattern.
     """
-    #this broke the test also!
     sequence = [words[0]]
+    word_dict = {}
+    for word in words[1:]: #already used the first word
+        key = word[0]
+        temp_list = word_dict.get(key,[])#returns a list associated with the key or an empty list
+        temp_list.append(word)
+        word_dict[key] = temp_list
+        #now I have a dictionary of letter:[words]
+    #current_term = words[0]
+    while True:
+        search_term = (sequence[-1])[-1]
+        if search_term in word_dict and word_dict[search_term]:#if the key exists and second thing acts 
+            #like a boolean (if true, continue, if not, goes to else and breaks
+            #makes sure we're not trying to append from a list that's already empty
+            option_list = word_dict[search_term]
+            sequence.append(option_list[0])
+            word_dict[search_term] = option_list[1:]
+        else:
+            break
+    return sequence
+        
+    #this broke the test also!
+    #sequence = [words[0]]
     #((sequence[0])[-1]) = ((sequence[1])[0]) #the second word starts with the last letter of the first word
     #make a dictionary of first letter:word pairs
     # word_dict = {}
@@ -147,6 +164,7 @@ def create_word_chain(words):
     # for word in sequence:
     #     word_dict[word] = word_dict.get(word[-1], [])
     #     sequence.append("whichever word comes next")
+    
     #SOMETHING I did here broke the test
     #make a dictionary of (last letter: word) pairs?
     # word_dict = {}
