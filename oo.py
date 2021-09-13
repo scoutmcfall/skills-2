@@ -56,7 +56,7 @@ class Book:
         #print(book1.author) "jesus"
 
 
-class Library(Book):#do I need to put (Book) next to library?
+class Library: #doesn't need to inherit from book because everything in book is already availabla
     """A library of books."""
 
     def __init__(self):
@@ -83,12 +83,13 @@ class Library(Book):#do I need to put (Book) next to library?
         books_by_author = []
         #take in an author and return a list of all books written by that author
         #books_by_author.append(getattr(self, author,[]))
-        super().__init__(self, author)
+        #super().__init__(self, author)
         for book in self.books:
-            if book.author == self.author:
-                books_by_author.append(book.title)
-            else:
-                continue
+            if book.author == author:
+                books_by_author.append(book)#is asking for the book object, not just the title
+        return books_by_author
+            # else:
+            #     continue
       
         # for item in self.books:
         #     if author in item:
@@ -104,7 +105,7 @@ class Library(Book):#do I need to put (Book) next to library?
         #     if self.author in self.books:
         #         books_by_author.append(self.title)
         #if no books, return empty list
-        return books_by_author
+        
         # TODO: replace this with your code
 
 
