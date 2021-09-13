@@ -56,18 +56,22 @@ class Book:
         #print(book1.author) "jesus"
 
 
-class Library:
+class Library(Book):#do I need to put (Book) next to library?
     """A library of books."""
 
     def __init__(self):
         """Create a library."""
-
+        #use super to get the title and author methods from Book class?
+        #super().__init__()
+        #should the library be a dictionary of author, title k/v pairs?
         self.books = []
+        
 
     def create_and_add_book(self, title, author):
         """Create a Book and add it to the library's list of books."""
         #take in title and author, instantiate a book
         #use super to get the book class?
+        
         book = Book(title, author)
         #add book to the library's list of books
         self.books.append(book)
@@ -78,8 +82,23 @@ class Library:
         """Return a list of books by the given author."""
         books_by_author = []
         #take in an author and return a list of all books written by that author
-        if author in self.books:
-           return Book(author)
+        #books_by_author.append(getattr(self, author,[]))
+        super().__init__(self, author)
+        for book in self.books:
+            if book.author == self.author:
+                books_by_author.append(book.title)
+            else:
+                continue
+      
+        # for item in self.books:
+        #     if author in item:
+        #         books_by_author.append(item[1:])
+        #     else:
+        #         continue
+        # if author in self.books:
+        #    books_by_author.append(self.title)
+        # else:
+        #     return books_by_author
         
         # for self.book in self.books:
         #     if self.author in self.books:
